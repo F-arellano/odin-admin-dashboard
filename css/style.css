@@ -1,0 +1,35 @@
+* {
+    --backround-side-color: #1992d4;
+    --background-header-color: #ffffff;
+    --background-article-color: #e2e8f0;
+    /* border: 1px solid red; */
+}
+
+.container {
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+        "side head"
+        "side art ";
+}
+
+.header {
+    grid-area: head;
+
+    background-color: var(--background-header-color);
+}
+
+.side-bar {
+    grid-area: side;
+
+    background-color: var(--backround-side-color);
+}
+
+.article {
+    grid-area: art;
+
+    background-color: var(--background-article-color);
+}
