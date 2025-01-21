@@ -6,7 +6,6 @@
     --white-color: #ffffff;
     --gray-color: rgb(144, 144, 144);
     --background-color: #e2e8f0;
-    /* border: 1px solid red; */
 }
 
 body {
@@ -260,6 +259,9 @@ hr {
 }
 
 .card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+
     min-height: 50px;
     border-radius: 12px;
     box-shadow: inset 15rem 0rem 0rem -14.5rem var(--secondary-color);
@@ -269,6 +271,23 @@ hr {
     & p {
         padding-top: 15px;
         color: var(--gray-color);
+    }
+}
+
+.card-links {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    justify-items: end;
+    align-items: end;
+    gap: 20px;
+    padding-top: 20px;
+
+    & svg {
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+    & path {
+        fill: black;
     }
 }
 
