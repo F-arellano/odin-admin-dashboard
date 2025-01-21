@@ -1,7 +1,9 @@
 * {
     --main-color: #1992d4;
+    --light-color: #39baff;
+    --dark-color: #095e8c;
     --secondary-color: #f43f21;
-    --light-color: #ffffff;
+    --white-color: #ffffff;
     --background-color: #e2e8f0;
     /* border: 1px solid red; */
 }
@@ -13,19 +15,17 @@ body {
 svg {
     display: inline;
     vertical-align: middle;
-    position: relative;
-    bottom: 0.2rem;
     height: 2rem;
     width: 2rem;
 }
 
 path {
-    fill: var(--light-color);
+    fill: var(--white-color);
 }
 
 a {
     text-decoration: none;
-    color: var(--light-color);
+    color: var(--white-color);
 
     &:hover {
         text-decoration: underline;
@@ -33,7 +33,7 @@ a {
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
 
     display: grid;
     grid-template-columns: 320px 1fr;
@@ -43,10 +43,121 @@ a {
         "side art ";
 }
 
+/* ===================== HEADER ========================= */
+
 .header {
     grid-area: head;
+    display: grid;
+    grid-template-columns: 65fr 35fr;
 
-    background-color: var(--light-color);
+    background-color: var(--white-color);
+
+    & .search-bar button,
+      .profile-bar button {
+        width: auto;
+        padding: 8px;
+        border: 1px solid transparent;
+        border-radius: 50%;  
+        background: var(--white-color);  
+
+        &:hover {
+            background-color: var(--background-color);
+        }
+        & svg {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+        & path {
+            fill: black;
+        }
+    }
+}
+
+.search-bar {
+    display: grid;
+    grid-template-columns: 40px auto;
+    align-items: center;
+    justify-items: start;
+
+    padding-left: 50px;
+    gap: 10px;
+
+    & input {
+        width: 90%;
+        border: none;
+        border-radius: 16px;
+        padding: 4px 10px;
+        background-color: var(--background-color);
+    }
+}
+
+.profile-bar {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    justify-items: end;
+
+    padding-right: 70px;
+    gap: 30px;
+
+    & img {
+        height: 3rem;
+        border-radius: 50%;
+    }
+    & p {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.header-info {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+
+    padding-left: 50px;
+    gap: 20px;
+
+    & img {
+        height: 5rem;
+        border-radius: 50%;
+    }
+
+    & p:first-of-type {
+        font-size: 0.8rem;
+        font-weight: bold;
+
+        padding-top: 10px;
+    }
+    & p:nth-of-type(2) {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: start;
+
+    & button {
+        width: 12ch;
+        border: 2px solid transparent;
+        border-radius: 1.5rem;
+        padding: 10px 20px;
+
+        background-color: var(--main-color);
+        color: var(--white-color);
+        font-weight: bold;
+
+        &:hover {
+            background-color: var(--light-color);
+
+            &:active {
+                border: 2px solid var(--dark-color);
+            }
+        }
+    };
 }
 
 /* ==================== SIDE BAR ======================= */
@@ -65,12 +176,17 @@ a {
     padding: 30px;
 
     background-color: var(--main-color);
-    color: var(--light-color);
+    color: var(--white-color);
 
     & li {
         font-size: 1.5rem;
         font-weight: bold;
         padding: 10px 0px;
+    }
+
+    & svg {
+        position: relative;
+        bottom: 0.2rem;
     }
 }
 
